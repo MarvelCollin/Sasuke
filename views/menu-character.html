@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/menu-character.css">
+</head>
+<body>
+    <div id="app"></div>
+    <nav>
+        <div id="extend-navbar"></div>
+    </nav>
+
+    <div class="container" id="character-container">
+
+    </div>
+
+    <div id="character-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="modal-character-image" src="" alt="Character Image">
+            </div>
+            <div class="modal-right">
+                <img id="modal-scroll-bg" src="../asset/ninja-scroll-bg-revised.png" alt="Scroll Background">
+                <div class="modal-text">
+                    <h3 id="modal-character-name"></h3>
+                    <p id="modal-character-description"></p>
+                </div>
+            </div>
+            <span class="close-button">&times;</span>
+        </div>
+    </div>
+
+    <footer>
+        <div id="extend-footer"></div>
+    </footer>
+
+    <script src="../controllers/connector.js"></script>
+    <script src="../controllers/menu_character/character.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            extend('components/app.html', 'app', 'menu_character');
+            extend('components/navbar.html', 'extend-navbar', 'menu_character');
+            extend('components/footer.html', 'extend-footer', 'menu_character');
+        });
+    </script>
+</body>
+</html>
+  

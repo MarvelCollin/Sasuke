@@ -1,0 +1,6 @@
+18:27 21/07/2024
+Menu Character 
+ - Cards
+ - Fetch JSON
+ - Modal
+ - Read Average Color (using canvas)

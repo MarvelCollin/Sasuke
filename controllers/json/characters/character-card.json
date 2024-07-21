@@ -1,41 +1,41 @@
 [
     {
-        "filename": "hinata.jpg",
+        "filename": "../asset/home/character-card/hinata.jpg",
         "name": "Hinata",
         "description": "Description of Hinata"
     },
     {
-        "filename": "ino.jpg",
+        "filename": "../asset/home/character-card/ino.jpg",
         "name": "Ino",
         "description": "Description of Ino"
     },
     {
-        "filename": "kakashi.jpg",
+        "filename": "../asset/home/character-card/kakashi.jpg",
         "name": "Kakashi",
         "description": "Description of Kakashi"
     },
     {
-        "filen  ame": "kiba.png",
+        "filename": "../asset/home/character-card/kiba.png",
         "name": "Kiba",
         "description": "Description of Kiba"
     },
     {
-        "filename": "Naruto.jpg",
+        "filename": "../asset/home/character-card/Naruto.jpg",
         "name": "Naruto",
         "description": "Description of Naruto"
     },
     {
-        "filename": "Sakura.jpg",
+        "filename": "../asset/home/character-card/Sakura.jpg",
         "name": "Sakura",
         "description": "Description of Sakura"
     },
     {
-        "filename": "sasuke.png",
+        "filename": "../asset/home/character-card/sasuke.png",
         "name": "Sasuke",
         "description": "Description of Sasuke"
     },
     {
-        "filename": "shikamaru.jpg",
+        "filename": "../asset/home/character-card/shikamaru.jpg",
         "name": "Shikamaru",
         "description": "Description of Shikamaru"
     }

@@ -1,0 +1,144 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    background: grey;
+    border: solid 3px grey;
+    color: #fff;
+    overflow: hidden;
+    width: 15vw;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover; 
+    filter: grayscale(100%);
+    transition: filter 2s;
+}
+
+.card img:hover {
+    filter: grayscale(0%);
+}
+
+.card-content {
+    padding: 0;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.2em;
+    background-color: grey;
+    padding: 10px 0;
+}
+
+.card-content a {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+.card-content a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.character-name {
+    font-size: 1.8rem !important;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    padding: 10px 0;
+}
+
+.card-content a {
+    font-size: 20px;
+}
+
+/* BAGIAN MODAL  */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    /* background-color: #fefefe; */
+    margin: 5% auto; 
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 80%; 
+    display: flex;
+    align-items: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 200px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-left img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modal-right {
+    position: relative;
+    width: 70%;
+    height: auto;
+}
+
+#modal-scroll-bg {
+    width: 100%;
+    height: auto;
+}
+
+.modal-text {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+}
+
+.modal-text h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.modal-text p {
+    font-size: 1.2em;
+}
+
+#modal-character-image {
+    max-width: 40vw;
+    max-height: 40vh;
+}

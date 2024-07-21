@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Story Arcs Accordion</title>
+    <link rel="stylesheet" href="../styles/story.css">
+</head>
+<body>
+    <div id="app"></div>
+    <nav>
+        <div id="extend-navbar"></div>
+    </nav>
+
+    <div class="accordion" id="accordion">
+    </div>
+    <script src="../controllers/accordions.js"></script>
+
+
+    <footer>
+        <div id="extend-footer"></div>
+    </footer>
+
+    <script src="../controllers/connector.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            extend('components/app.html', 'app', 'menu_character');
+            extend('components/navbar.html', 'extend-navbar', 'menu_character');
+            extend('components/footer.html', 'extend-footer', 'menu_character');
+        });
+    </script>
+</body>
+</html>

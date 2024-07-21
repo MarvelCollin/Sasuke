@@ -1,0 +1,42 @@
+[
+    {
+        "filename": "../asset/character/character/hinata.png",
+        "name": "Hinata",
+        "description": "This is Hinata"
+    },
+    {
+        "filename": "../asset/character/character/ino.webp",
+        "name": "Ino",
+        "description": "This is Ino"
+    },
+    {
+        "filename": "../asset/character/character/Kakashi.webp",
+        "name": "Kakashi",
+        "description": "This is Kakashi"
+    },
+    {
+        "filename": "../asset/character/character/kiba.webp",
+        "name": "Kiba",
+        "description": "This is Kiba"
+    },
+    {
+        "filename": "../asset/character/character/naruto.png",
+        "name": "Naruto",
+        "description": "This is Naruto"
+    },
+    {
+        "filename": "../asset/character/character/sakura.png",
+        "name": "Sakura",
+        "description": "This is  Sakura"
+    },
+    {
+        "filename": "../asset/character/character/sasuke.png",
+        "name": "Sasuke",
+        "description": "This is  Sasuke"
+    },
+    {
+        "filename": "../asset/character/character/shikamaru.png",
+        "name": "Shikamaru",
+        "description": "This is  Shikamaru"
+    }
+]
