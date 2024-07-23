@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching card data:', error));
 });
 
-// Function to fetch JSON data
 function fetchJSONData(url) {
     return fetch(url)
         .then(response => {
