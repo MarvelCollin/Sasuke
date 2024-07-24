@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div id="extend-navbar"></div>
+    </nav>
     <canvas id="myCanvas"></canvas>
     <script type="module" src="../controllers/canvas/player.js"></script>
+    <script src="../controllers/connector.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            extend('components/app.html', 'app', 'menu_character');
+            extend('components/navbar.html', 'extend-navbar', 'menu_character');
+            extend('components/footer.html', 'extend-footer', 'menu_character');
+        });
+    </script>
 </body>
 </html>

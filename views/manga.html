@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles/manga.css">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body>
+    <nav>
+        <div id="extend-navbar"></div>
+    </nav>
+
+    <div class="container">
+        <div class="detail">
+            <h1 id="title"></h1>
+            <p class="author-p">AUTHOR : <span id="author"></span></p>
+            <p class="rating-p">RATING : <span id="rating"></span> / 5</p>
+            <button class="btn">SEE MORE</button>
+        </div>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" id="naruto-shippuden">
+                    <img onclick="switchCard('NARUTO SHIPPUDEN')" src="../asset/manga/naruto-shippuden.jpg" alt="NARUTO SHIPPUDEN">
+                </div>
+                <div class="carousel-item" id="naruto">
+                    <img onclick="switchCard('NARUTO')" src="../asset/manga/naruto-manga.jpg" alt="NARUTO">
+                </div>
+                <div class="carousel-item" id="boruto">
+                    <img onclick="switchCard('BORUTO')" src="../asset/manga/boruto.jpg" alt="BORUTO">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../controllers/connector.js"></script>
+    <script src="../controllers/manga.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            extend('components/app.html', 'app', 'menu_character');
+            extend('components/navbar.html', 'extend-navbar', 'menu_character');
+            extend('components/footer.html', 'extend-footer', 'menu_character');
+        });
+    </script>
+</body>
+
+</html>
