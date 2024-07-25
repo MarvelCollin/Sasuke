@@ -1,5 +1,5 @@
 .logo-container img {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 250px;
@@ -51,7 +51,12 @@
 }
 
 #navbarBtn {
+    margin: 0px;
+    position: fixed;
     z-index: 1000;
+    top: 0px;
+    right: 0px;
+    margin: 10px;
 }
 
 .button-container img {
@@ -68,10 +73,6 @@
     gap: 5px;
 }
 
-#navbarBtn {
-    margin: 100px;
-}
-
 .scaled {
     transform: scale(1.2);
-}
+}   

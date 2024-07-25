@@ -12,31 +12,27 @@
     <nav>
         <div id="extend-navbar"></div>
     </nav>
-    <div id="cloud-back">
-        <img src="../asset/home/cloud.webp" alt="Cloud">
+    <div class="landing-section">
+        <div id="cloud-back">
+            <img src="../asset/home/cloud.webp" alt="Cloud">
+        </div>
+        <canvas id="myCanvas"></canvas>
+        <div id="cloud-front">
+            <img src="../asset/home/cloud.webp" alt="Cloud">
+        </div>
+        <img id="mountain" src="../asset/home/mountain.webp" alt="Mountain">
     </div>
-    <canvas id="myCanvas"></canvas>
-    <div id="cloud-front">
-        <img src="../asset/home/cloud.webp" alt="Cloud">
+    <div class="n">
+        <img src="../asset/bg-secondary.png" alt="">
     </div>
-    <img id="mountain" src="../asset/home/mountain.webp" alt="Mountain">
+
     <script type="module" src="../controllers/canvas/player.js"></script>
     <script src="../controllers/connector.js"></script>
+    <script src="../controllers/parallax.js"></script> 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             extend('components/app.html', 'app', 'menu_character');
             extend('components/navbar.html', 'extend-navbar', 'menu_character');
-
-            window.addEventListener('scroll', function() {
-                var scrollPos = window.scrollY;
-                var scaleMountain = 1 + scrollPos / 1000;
-                var scaleCloudBack = 1 + scrollPos / 2000;
-                var scaleCloudFront = 1 + scrollPos / 3000;
-
-                document.getElementById('mountain').style.transform = `scale(${scaleMountain}) translateY(${scrollPos / 2}px)`;
-                document.getElementById('cloud-back').style.transform = `scale(${scaleCloudBack}) translateY(${scrollPos / 4}px)`;
-                document.getElementById('cloud-front').style.transform = `scale(${scaleCloudFront}) translateY(${scrollPos / 6}px)`;
-            });
         });
     </script>
 </body>
