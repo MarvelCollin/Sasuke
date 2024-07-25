@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Manga</title>
     <style>
         body {
             margin: 0;
             padding: 0;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../styles/manga.css">
     <link rel="stylesheet" href="../styles/global.css">
 </head>
@@ -20,7 +21,7 @@
         <div id="extend-navbar"></div>
     </nav>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="detail">
             <h1 id="title"></h1>
             <p class="author-p">AUTHOR : <span id="author"></span></p>
@@ -40,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <script src="../controllers/connector.js"></script>
     <script src="../controllers/manga.js"></script>
@@ -49,7 +50,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             extend('components/app.html', 'app', 'menu_character');
             extend('components/navbar.html', 'extend-navbar', 'menu_character');
-            extend('components/footer.html', 'extend-footer', 'menu_character');
         });
     </script>
 </body>

@@ -1,15 +1,30 @@
-<link rel="stylesheet" href="../../css/navbar.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="nav">
-    <div class="logo-container">
-        <a href="#" class="logo"><img src="../../assets/logo.png" alt=""></a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/navbar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo-container">
+            <img src="../../asset/naruto-logo.webp" alt="Naruto Logo">
+        </div>
+        <div class="hamburger">
+            <img id="navbarBtn" src="../../asset/hamburger-menu-logo.png" alt="Menu">
+            <div id="header" class="header">
+                <a href="story.html">Story</a>
+                <a href="menu-character.html">Character</a>
+                <a href="home.html">Home</a>
+                <a href="loading.html">Loading</a>
+                <a href="manga.html">Manga</a>
+            </div>
+        </div>
     </div>
-    <ul class="menu">
-        <li id="story"><a href="story.html">Accordion (Story)</a></li>
-        <li id="menucharacter"><a href="menu-character.html">Menu Character</a></li>
-        <li id="home"><a href="home.html">Player Move</a></li>
-        <li id="loading"><a href="loading.html">Loading</a></li>
-        <li id="manga"><a href="manga.html">Manga</a></li>
+        <script src="../../controllers/navbar.js"></script>
+</body>
 
-    </ul>
-</div>
+</html>

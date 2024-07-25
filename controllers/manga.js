@@ -14,13 +14,56 @@ const mangas = [
     background: "../asset/manga/naruto-shippuden-bg.jpg",
   },
   {
-    filename: "../asset/manga/boruto-bg.avif",
+    filename: "../asset/manga/boruto.jpg",
     title: "BORUTO",
     author: "MASHASHI KISHIMOTO",
     rating: "0",
     background: "../asset/manga/boruto-bg.avif",
   },
 ];
+
+function createTemplate() {
+  const container = document.createElement("div");
+  container.className = "container";
+
+  const detailHTML = `
+    <div class="detail">
+      <h1 id="title"></h1>
+      <p class="author-p">AUTHOR : <span id="author"></span></p>
+      <p class="rating-p">RATING : <span id="rating"></span> / 5</p>
+      <button class="btn">SEE MORE</button>
+    </div>
+  `;
+
+  container.innerHTML += detailHTML;
+
+  let carouselHTML = `
+    <div class="carousel">
+      <div class="carousel-inner">
+  `;
+
+  mangas.forEach((manga, index) => {
+    carouselHTML += `
+      <div class="carousel-item ${
+        index === 0 ? "active" : ""
+      }" id="${manga.title.toLowerCase().replace(" ", "-")}">
+        <img onclick="switchCard('${manga.title}')" src="${
+      manga.filename
+    }" alt="${manga.title}">
+      </div>
+    `;
+  });
+
+  carouselHTML += `
+      </div>
+    </div>
+  `;
+
+  container.innerHTML += carouselHTML;
+  document.body.appendChild(container);
+
+  switchCard(mangas[0].title);
+}
 
 function switchCard(value) {
   currentIndex = 0;
@@ -65,3 +108,5 @@ function switchCard(value) {
   inner.style.transform = `translateX(${offset}px)`;
   currentIndex = newIndex;
 }
+
+document.addEventListener("DOMContentLoaded", createTemplate);

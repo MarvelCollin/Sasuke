@@ -1,9 +1,15 @@
 function extend(path, targetId, page) {
-  fetch(path)
-    .then((response) => response.text())
-    .then((html) => {
-      const $ = document;
-      $.getElementById(targetId).innerHTML = html;
-      $.getElementById(page).classList.add("active-navbar");
-    });
+  $.ajax({
+    url: path,
+    method: 'GET',
+    success: function (html) {
+      $('#' + targetId).html(html);
+      $('#' + page).addClass('active-navbar');
+    },
+    error: function (error) {
+      console.error('Error:', error);
+    }
+  });
+  
+  console.log("ashdashju")
 }

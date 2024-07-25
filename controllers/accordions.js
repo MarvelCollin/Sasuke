@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("../controllers/json/story.json")
+  fetch("../models/story.json")
     .then((response) => response.json())
     .then((data) => renderAccordion(data))
     .catch((error) => console.error("Error fetching data:", error));

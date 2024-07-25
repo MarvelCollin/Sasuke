@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchJSONData('../controllers/json/characters/character-card.json')
+    fetchJSONData('../models/characters/character-card.json')
         .then(cardData => {
             renderCharacterCards(cardData);
             addReadMoreEventListeners(cardData);

@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  height: 200vh;
+  background: url("../asset/home/sky.webp") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#mountain {
+  position: fixed;
+  bottom: -50px;
+  width: 100%;
+  z-index: 2;
+  transition: transform 0.1s ease-out;
+}
+
+#cloud-back {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.1s ease-out;
+}
+
+#cloud-front {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 3;
+  transition: transform 0.1s ease-out;
+}
+
+#cloud-back img {
+  display: inline-block;
+  animation: marquee-reverse 20s linear infinite;
+}
+
+#myCanvas {
+    position: fixed
+}
+
+#cloud-front img {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+#myCanvas {
+  position: relative;
+  z-index: 10;
+}

@@ -12,7 +12,7 @@ cloudImg.src = '../asset/akatsuki_cloud.png';
 let cloudLeftX = -150;
 let cloudRightX = canvas.width + 150;
 let progressBarWidth = 0;
-let progressMaxWidth = 300;
+let progressMaxWidth = 400;
 let loadingDuration = 10000; 
 
 function draw() {
@@ -23,8 +23,8 @@ function draw() {
     let y = (canvas.height / 2) - (backgroundImg.height / 2) * scale;
     ctx.drawImage(backgroundImg, x, y, backgroundImg.width * scale, backgroundImg.height * scale);
 
-    ctx.drawImage(cloudImg, cloudLeftX, canvas.height * 0.1 + 600, 100, 50);
-    ctx.drawImage(cloudImg, cloudRightX, canvas.height * 0.1, 100, 50);
+    ctx.drawImage(cloudImg, cloudLeftX, canvas.height * 0.1 + 400, cloudImg.width / 2, cloudImg.height / 2);
+    ctx.drawImage(cloudImg, cloudRightX, canvas.height * 0.1, cloudImg.width / 2, cloudImg.height / 2);
 
     if (progressBarWidth < progressMaxWidth) {
         progressBarWidth += progressMaxWidth / (loadingDuration / 16); 

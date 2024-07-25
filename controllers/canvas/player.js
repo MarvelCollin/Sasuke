@@ -17,28 +17,51 @@ const playerSprites = {
     "../asset/game_asset/naruto/running/running4.png",
     "../asset/game_asset/naruto/running/running5.png",
   ],
+  jumping_up: [
+    "../asset/game_asset/naruto/jumping_up/up0.png",
+    "../asset/game_asset/naruto/jumping_up/up1.png",
+  ],
+  jumping_down: [
+    "../asset/game_asset/naruto/jumping_down/down0.png",
+    "../asset/game_asset/naruto/jumping_down/down1.png",
+  ]
 };
 
 let playerX = 100;
-let playerY = 100;  
+let playerY;
+let initialY;
 let currentFrameIndex = 0;
 let currentAnimationFrames = playerSprites.idle;
 let pressedKeys = {};
-let playerSpeed = 17;
+let playerSpeed = 24;
 let isPlayerWalking = false;
 let isPlayerFacingLeft = false;
-const animationDelay = 35;
+let normalDelay = 45;
+let constandDelay = normalDelay;
+let jumpingDelay = 30;
+let idleDelay = 120;
 let isJumping = false;
 let jumpSpeed = 10;
 let jumpHeight = 100;
-let initialY = playerY;
 let jumpFrameCounter = 0;
+let isFalling = false;
+let characterWidth = 90;
+let characterHeight = 120;
+
+function updatePlayerPosition() {
+  playerY = canvas.height - characterHeight - 76; 
+  initialY = playerY;
+}
+
+window.addEventListener('resize', updatePlayerPosition);
+updatePlayerPosition();
 
 document.addEventListener("keydown", (event) => {
   pressedKeys[event.key.toLowerCase()] = true;
-  if (pressedKeys["w"] && !isJumping) {
+  if (pressedKeys["w"] && !isJumping && !isFalling) {
     isJumping = true;
     jumpFrameCounter = 0;
+    currentAnimationFrames = playerSprites.jumping_up;
   }
 });
 
@@ -46,20 +69,22 @@ document.addEventListener("keyup", (event) => {
   pressedKeys[event.key.toLowerCase()] = false;
   if (!pressedKeys["d"] && !pressedKeys["a"]) {
     isPlayerWalking = false;
-    currentAnimationFrames = playerSprites.idle;
   }
 });
 
 window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth + 100;
-  canvas.height = window.innerHeight + 100;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  updatePlayerPosition();
 });
 
 function movePlayer() {
   if (pressedKeys["d"] || pressedKeys["a"]) {
     isPlayerWalking = true;
     currentAnimationFrames = playerSprites.walking;
-  } else {
+    constandDelay = normalDelay;
+  } else if (!isJumping && !isFalling) {
+    constandDelay = idleDelay;
     isPlayerWalking = false;
     currentAnimationFrames = playerSprites.idle;
   }
@@ -72,23 +97,34 @@ function movePlayer() {
     playerX -= playerSpeed;
   }
 
-  if(playerX >= canvas.width){
+  if (playerX >= canvas.width) {
     playerX = 0;
-  } else if(playerX <= 0){
+  } else if (playerX <= 0) {
     playerX = canvas.width;
   }
 }
 
 function handleJump() {
   if (isJumping) {
-    if (jumpFrameCounter < jumpHeight && playerY > initialY - jumpHeight) {
+    if (jumpFrameCounter < jumpHeight) {
+      currentAnimationFrames = playerSprites.jumping_up;
       playerY -= jumpSpeed;
       jumpFrameCounter += jumpSpeed;
-    } else if (playerY < initialY) {
-      playerY += jumpSpeed;
+      constandDelay = jumpingDelay;
     } else {
       isJumping = false;
+      isFalling = true;
+    }
+  } else if (isFalling) {
+    if (playerY < initialY) {
+      currentAnimationFrames = playerSprites.jumping_down;
+      playerY += jumpSpeed;
+      constandDelay = jumpingDelay;
+    } else {
+      isFalling = false;
+      constandDelay = normalDelay;
       playerY = initialY;
+      currentAnimationFrames = isPlayerWalking ? playerSprites.walking : playerSprites.idle;
     }
   }
 }
@@ -102,10 +138,22 @@ function drawFrame(frameIndex) {
     if (isPlayerFacingLeft) {
       ctx.save();
       ctx.scale(-1, 1);
-      ctx.drawImage(spriteImage, -playerX - (spriteImage.width / 4), playerY, (spriteImage.width / 4), spriteImage.height / 4);
+      ctx.drawImage(
+        spriteImage,
+        -playerX - characterWidth,
+        playerY,
+        characterWidth,
+        characterHeight
+      );
       ctx.restore();
     } else {
-      ctx.drawImage(spriteImage, playerX, playerY, spriteImage.width / 4, spriteImage.height / 4);
+      ctx.drawImage(
+        spriteImage,
+        playerX,
+        playerY,
+        characterWidth,
+        characterHeight
+      );
     }
   };
 }
@@ -117,12 +165,13 @@ function animate() {
   drawFrame(currentFrameIndex);
   setTimeout(() => {
     requestAnimationFrame(animate);
-  }, animationDelay);
+  }, constandDelay);
 }
 
 function initializeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  updatePlayerPosition();
 }
 
 function startAnimation() {
