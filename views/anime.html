@@ -18,14 +18,21 @@
             <p class="top-title">DISCOVER OUR</p>
             <p class="title">ANIME</p>
         </div>
-        <div class="slider">
-            
+        <div class="slider" id="anime-container">
+
         </div>
+        <div class="details"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
     <script type="module"
     src="../controllers/canvas/particle.js"></script>
 
     <script src="../controllers/connector.js"></script>
+    <script src="../controllers/anime.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             extend('components/app.html', 'app', 'menu_character');

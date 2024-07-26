@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(cardData => {
             renderCharacterCards(cardData);
             addReadMoreEventListeners(cardData);
+            addSearchFunctionality(cardData); 
         })
         .catch(error => console.error('Error fetching card data:', error));
 });
@@ -19,9 +20,10 @@ function fetchJSONData(url) {
 
 function renderCharacterCards(cardData) {
     const container = document.getElementById('character-container');
+    container.innerHTML = ''; // Clear existing cards
     cardData.forEach(character => {
         const cardHTML = `
-            <div class="card">
+            <div class="card" data-name="${character.name.toLowerCase()}">
                 <img src="${character.filename}" alt="${character.name}">
                 <div class="card-content">
                     <h3 class="character-name">${character.name}</h3>
@@ -107,9 +109,22 @@ function applyBackgroundEffect(imageElement) {
 }
 
 function createBackgroundEffect(container, color) {
-    container.style.background = `
-        radial-gradient(circle at 50% 50%, ${color} 40%, rgba(0, 0, 0, 0) 70%),
-        url('') repeat
+    const backgroundEffect = document.createElement('div');
+    backgroundEffect.className = 'background-effect';
+    backgroundEffect.style.background = `
+        radial-gradient(circle at 50% 50%, ${color} 40%, rgba(0, 0, 0, 0) 70%)
     `;
-    container.style.backgroundSize = 'cover';
+    container.appendChild(backgroundEffect);
+}
+
+function addSearchFunctionality(cardData) {
+    const searchInput = document.getElementById('searching');
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        const filteredData = cardData.filter(character =>
+            character.name.toLowerCase().includes(query)
+        );
+        renderCharacterCards(filteredData);
+        addReadMoreEventListeners(filteredData); 
+    });
 }

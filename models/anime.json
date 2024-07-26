@@ -3,65 +3,45 @@
         "cardfilename": "../asset/anime/boruto.jpg",
         "name": "boruto",
         "synopsis": "Boruto: Naruto Next Generations follows the adventures of Naruto Uzumaki's son, Boruto, as he navigates the challenges of being a young ninja in a time of peace, while dealing with the legacy of his famous father.",
-        "author" : "UKYO KODACHI",
-        "director" : "NORIYUKI ABE",
-        "studio" : "PIERROT",
-        "sliders" : [
-            {
-                "sliderPath" : "../assets/anime/boruto/boruto-1.avif"
-            },
-            {
-                "sliderPath" : "../assets/anime/boruto/boruto-2.webp"
-            },
-            {
-                "sliderPath" : "../assets/anime/boruto/boruto-3.jpg"
-            },
-            {
-                "sliderPath" : "../assets/anime/boruto/boruto-4.jpg"
-            }
+        "author": "UKYO KODACHI",
+        "director": "NORIYUKI ABE",
+        "studio": "PIERROT",
+        "background": "../asset/anime/boruto.jpg",
+        "sliders": [
+            { "sliderPath": "../asset/anime/boruto/boruto-1.avif" },
+            { "sliderPath": "../asset/anime/boruto/boruto-2.webp" },
+            { "sliderPath": "../asset/anime/boruto/boruto-3.jpg" },
+            { "sliderPath": "../asset/anime/boruto/boruto-4.jpg" }
         ]
     },
     {
         "cardfilename": "../asset/anime/naruto.jpg",
         "name": "naruto",
         "synopsis": "Naruto is a Japanese anime series based on Masashi Kishimoto's manga of the same name. It follows the journey of Naruto Uzumaki, a young ninja with a dream of becoming the strongest ninja and the leader of his village, known as the Hokage. Naruto is an orphan, and he harbors the powerful Nine-Tails Fox, a fearsome creature sealed within him at birth.",
-        "director" : "MASASHI KISHIMOTO",
-        "studio" : "PIERROT",
-        "sliders" : [
-            {
-                "sliderPath" : "../assets/anime/naruto/naruto.jpg"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto/naruto-2.jpg"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto/naruto-3.jpg"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto/naruto-4.jpg"
-            }
+        "author": "MASASHI KISHIMOTO",
+        "director": "MASASHI KISHIMOTO",
+        "studio": "PIERROT",
+        "background": "../asset/anime/naruto.jpg",
+        "sliders": [
+            { "sliderPath": "../asset/anime/naruto/naruto.jpg" },
+            { "sliderPath": "../asset/anime/naruto/naruto-2.jpg" },
+            { "sliderPath": "../asset/anime/naruto/naruto-3.jpg" },
+            { "sliderPath": "../asset/anime/naruto/naruto-4.jpg" }
         ]
     },
     {
         "cardfilename": "../asset/anime/naruto-shippuden.jpg",
         "name": "naruto-shippuden",
         "synopsis": "Naruto Shippuden continues the story of Naruto Uzumaki, now older and facing even greater challenges as he strives to protect his village and achieve his dream of becoming Hokage.",
-        "author" : "MASASHI KISHIMOTO",
-        "director" : "HAYATO DATE",
-        "studio" : "PIERROT",
-        "sliders" : [
-            {
-                "sliderPath" : "../assets/anime/naruto-shippuden/naruto-shippuden-1.png"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto-shippuden/naruto-shippuden-2.png"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto-shippuden/naruto-shippuden-3.png"
-            },
-            {
-                "sliderPath" : "../assets/anime/naruto-shippuden/naruto-shippuden-4.png"
-            }
+        "author": "MASASHI KISHIMOTO",
+        "director": "HAYATO DATE",
+        "studio": "PIERROT",
+        "background": "../asset/anime/naruto-shippuden.jpg",
+        "sliders": [
+            { "sliderPath": "../asset/anime/naruto-shippuden/naruto-shippuden-1.png" },
+            { "sliderPath": "../asset/anime/naruto-shippuden/naruto-shippuden-2.png" },
+            { "sliderPath": "../asset/anime/naruto-shippuden/naruto-shippuden-3.jpg" },
+            { "sliderPath": "../asset/anime/naruto-shippuden/naruto-shippuden-4.jpg" }
         ]
     }
 ]

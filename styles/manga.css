@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 
 .carousel {
@@ -14,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
+    width: 60%;
     overflow: hidden;
 }
 
@@ -24,7 +25,7 @@ body {
     gap: 20px;
 }
 
-.carousel-item img{
+.carousel-item img {
     width: 200px;
     height: auto;
     transition: transform 0.5s ease-in-out;
@@ -39,4 +40,29 @@ body {
 
 .detail {
     height: 100%;
+    width: 40%;
+}
+
+.detail h1, .detail p, .detail button {
+    margin: 10px 0;
+}
+
+.author-p {
+    text-align: left;
+}
+
+.rating-p {
+    text-align: left;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: darkgray;
 }

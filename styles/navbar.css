@@ -19,6 +19,7 @@
 }
 
 #themeButton {
+    position: fixed;
     z-index: 999;
     background: none;
     border: none;
@@ -26,8 +27,13 @@
     font-size: 18px;
     cursor: pointer;
     margin-right: 100px;
-    padding: 5px;
-    border-radius: 2px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 3vh;
+    margin-right: 10vw;
+    z-index: 1000;
+    top: 0px;
+    right: 0px;
     background-color: black;
 }
 
@@ -64,8 +70,8 @@
 }
 
 #navbarBtn {
-    margin: 0px;
     position: fixed;
+    margin: 0px;
     z-index: 1000;
     top: 0px;
     right: 0px;

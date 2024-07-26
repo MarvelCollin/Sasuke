@@ -2,44 +2,220 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
 
 .top-title {
-    color: grey;
-    font-size: 30px;
-    margin: 20px;
+  color: grey;
+  font-size: 30px;
+  margin: 20px;
 }
+
 .title {
-    margin: 20px;
-    font-size: 100px;
-    color: grey;
-    border: 3px solid grey;
-    padding: 10px 150px;
+  margin: 20px;
+  font-size: 100px;
+  color: grey;
+  border: 3px solid grey;
+  padding: 10px 150px;
 }
 
 #myCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    display: block;
-    z-index: 10; 
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  display: block;
+  z-index: 10;
+}
+
 #toggleButton {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
+}
+
+.anime-card {
+  height: auto;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.anime-card img {
+  transition: transform 0.5s, filter 0.5s, box-shadow 0.5s;
+  height: 300px;
+  filter: grayscale(100%);
+}
+
+.anime-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.anime-card.active img {
+  filter: grayscale(0%);
+}
+
+.slider {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  height: 45vh;
+  box-sizing: border-box;
+}
+
+.anime-card.active {
+  transform: translateY(50px);
+  filter: grayscale(0%);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+  width: 100vw;
+  padding: 20px 20px;
+  color: white;
+  background-color: black;
+  display: flex;
+  overflow-y: auto;
+}
+
+.details-left {
+  flex: 1;
+  padding-left: 20vw;
+}
+
+.details-right {
+  flex: 1;
+  padding: 0px 20px;
+}
+
+.synopsis,
+.gallery,
+.info {
+  margin-bottom: 20px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.synopsis h2,
+.gallery h2 {
+  border-bottom: 2px solid white;
+}
+
+.gallery-images {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-images img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 50%;
+  background-color: #333;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  font-weight: normal;
+}
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
+
+.modal-content-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+padding-top: 30vh;
+  margin: auto;
+  display: block;
+  width: 50vw;
+    height: auto;
+  animation: zoomIn 0.5s;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
 }
