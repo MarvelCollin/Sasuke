@@ -52,7 +52,6 @@ body {
 
 #cloud-front {
     top: 60px;
-    z-index: 3;
 }
 
 #cloud-back img, #cloud-front img {
@@ -71,13 +70,13 @@ body {
 }
 
 @keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+    from { transform: translateX(120%); }
+    to { transform: translateX(-120%); }
 }
 
 @keyframes marquee-reverse {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(100%); }
+    from { transform: translateX(-140%); }
+    to { transform: translateX(120%); }
 }
 
 #myCanvas {

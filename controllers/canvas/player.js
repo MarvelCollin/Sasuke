@@ -43,7 +43,7 @@ let idleDelay = 120;
 let isJumping = false;
 let jumpSpeed = 10;
 let jumpHeight = 100;
-let jumpFrameCounter = 0;
+let jumpHeightCounter = 0;
 let isFalling = false;
 let characterWidth = 90;
 let characterHeight = 120;
@@ -60,8 +60,10 @@ document.addEventListener("keydown", (event) => {
   pressedKeys[event.key.toLowerCase()] = true;
   if (pressedKeys["w"] && !isJumping && !isFalling) {
     isJumping = true;
-    jumpFrameCounter = 0;
+    jumpHeightCounter = 0;
+    // ganti frame
     currentAnimationFrames = playerSprites.jumping_up;
+    console.log("jumping")
   }
 });
 
@@ -105,25 +107,39 @@ function movePlayer() {
 }
 
 function handleJump() {
+  // setelah tekan w
   if (isJumping) {
-    if (jumpFrameCounter < jumpHeight) {
-      currentAnimationFrames = playerSprites.jumping_up;
+    // ganti frame jadi lompat
+    currentAnimationFrames = playerSprites.jumping_up;
+    // apakah sampai limit 
+    if (jumpHeightCounter < jumpHeight) {
+      // - (minus) naik
       playerY -= jumpSpeed;
-      jumpFrameCounter += jumpSpeed;
+      
+      // nambahin counternya
+      jumpHeightCounter += jumpSpeed;
+
       constandDelay = jumpingDelay;
     } else {
+      // ganti fase jadi turun
       isJumping = false;
       isFalling = true;
     }
-  } else if (isFalling) {
+  } else if (isFalling) { // turun
+
+    currentAnimationFrames = playerSprites.jumping_down;
+    // apakah sampai initialY
     if (playerY < initialY) {
-      currentAnimationFrames = playerSprites.jumping_down;
+      // + (plus) turun
       playerY += jumpSpeed;
       constandDelay = jumpingDelay;
     } else {
       isFalling = false;
       constandDelay = normalDelay;
+      // memastikan player diposisi awal
       playerY = initialY;
+
+      // kalau ada ganti frame kejump, balikin lagi 
       currentAnimationFrames = isPlayerWalking ? playerSprites.walking : playerSprites.idle;
     }
   }

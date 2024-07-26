@@ -34,9 +34,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: 1;
     display: flex;
     justify-content: end;
+    z-index: 50;
 }
 
 .header a {

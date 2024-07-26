@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchJSONData('../models/characters/character-card.json')
+    fetchJSONData('../models/character-card.json')
         .then(cardData => {
             renderCharacterCards(cardData);
             addReadMoreEventListeners(cardData);
@@ -45,7 +45,7 @@ function addReadMoreEventListeners(cardData) {
 function openModal(event, cardData) {
     const name = event.target.getAttribute('data-name');
 
-    fetchJSONData('../controllers/json/characters/character.json')
+    fetchJSONData('../models/character.json')
         .then(modalData => {
             const character = modalData.find(character => character.name === name);
 
@@ -109,7 +109,7 @@ function applyBackgroundEffect(imageElement) {
 function createBackgroundEffect(container, color) {
     container.style.background = `
         radial-gradient(circle at 50% 50%, ${color} 40%, rgba(0, 0, 0, 0) 70%),
-        url('../path/to/smoke-texture.png') repeat
+        url('') repeat
     `;
     container.style.backgroundSize = 'cover';
 }
