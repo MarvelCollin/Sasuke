@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/anime.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <nav>
+        <div id="extend-navbar"></div>
+    </nav>
+    <canvas id="myCanvas"></canvas>
+    <div class="container">
+        <div class="title-header">
+            <p class="top-title">DISCOVER OUR</p>
+            <p class="title">ANIME</p>
+        </div>
+        <div class="slider">
+            
+        </div>
+    </div>
+    <script type="module"
+    src="../controllers/canvas/particle.js"></script>
+
+    <script src="../controllers/connector.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            extend('components/app.html', 'app', 'menu_character');
+            extend('components/navbar.html', 'extend-navbar', 'menu_character');
+        });
+    </script>
+</body>
+</html>

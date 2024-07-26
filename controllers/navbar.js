@@ -13,4 +13,14 @@ $(document).ready(function () {
     navbarBtn.on('click', function () {
         $(this).toggleClass('scaled');
     });
+
+    themeButton.addEventListener('click', function () {
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 });
