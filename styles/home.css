@@ -1,18 +1,11 @@
+html,
 body {
-  margin: 0;
-  padding: 0;
-  background: url('../asset/home/sky.webp') center center fixed;
-  background-size: cover;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-/* html, body{  
   height: 100%;
   margin: 0;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-} */
+  height: 200vh;
+}
 
 section {
   width: 100vw;
@@ -23,68 +16,61 @@ section {
   justify-content: center;
   font-size: 3rem;
   color: white;
-}
-
-
-.bg-blue { background-color: #3b82f6; }
-.bg-green { background-color: #10b981; }
-.bg-red { background-color: #ef4444; }
-.bg-purple { background-color: #8b5cf6; }
-
-#mountain, #cloud-back, #cloud-front {
-  transition: transform 0.3s ease-out;
-}
-
-.landing-section {
+  position: relative;
+  z-index: 5;
   background-size: cover;
-  transition: transform 1s ease-out, opacity 1s ease-out;
+  background-position: center;
 }
 
-.landing-section.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
+.background-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
 }
 
-#cloud-back, #cloud-front{
+.background-sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#cloud-back {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 3;
-}
-
-#mountain {
-  position: fixed;
-  bottom: -50px;
-  width: 100%;
-  z-index: 2;
-}
-
-#cloud-back, #cloud-front {
-  position: fixed;
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   z-index: 1;
 }
 
-#cloud-back {
-  top: 20px;
-}
-
 #cloud-front {
-  top: 60px;
-}
-
-#cloud-back img, #cloud-front img {
-  display: inline-block;
-  animation: marquee 20s linear infinite;
-}
-#cloud-back, #cloud-front{
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 99;
+}
+
+#mountain {
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#cloud-back img,
+#cloud-front img {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
 }
 
 #cloud-front img {
@@ -92,26 +78,40 @@ section {
 }
 
 @keyframes marquee {
-  from { transform: translateX(120%); }
-  to { transform: translateX(-120%); }
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(-120%);
+  }
 }
 
 @keyframes marquee-reverse {
-  from { transform: translateX(-140%); }
-  to { transform: translateX(120%); }
+  from {
+    transform: translateX(-140%);
+  }
+  to {
+    transform: translateX(120%);
+  }
 }
 
 #myCanvas {
-  position: fixed;                                            
+  position: fixed;
   width: 100%;
-  z-index: 10;
+  bottom: 0;
+  z-index: 99;
+}
+
+.dummy-section {
+  height: 100vh;  
+  background-color: transparent !important;
 }
 
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 15;
+  z-index: 4;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -119,7 +119,132 @@ section {
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 15;
+  z-index: 4;
   font-size: 24px;
   color: black;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* SECTION N  */
+.N {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.N-body {
+  display: flex;
+  /* margin-bottom: 250px; */
+}
+
+.N-body img {
+  transform: translateX(-150px);
+  height: 600px;
+  /* width: 20vw; */
+}
+
+.N-header {
+}
+
+.N-card-header p {
+  font-size: 100px;
+  margin: 10px;
+  border-bottom: 3px solid white;
+}
+
+.N-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 30px;
+  height: 500px;
+  background-color: black;
+}
+
+.N-card-header {
+}
+
+.N-button {
+  text-align: center;
+  border: 2px solid white;
+}
+
+.N-button:hover {
+  background-color: white;
+  
+  a {
+    color: black !important;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.N-container {
+}
+
+.N-container p {
+  font-size: 30px;
+}
+
+.lettering img {
+  width: 300px; 
+  height: auto;
+  display: block;
+  margin: 10px auto; 
+  position: relative;
+  animation: slide-in 1s forwards; 
+}
+
+.N-body {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 200px;
+}
+
+.N-body-left {
+  padding-left: 200px;
+  display: flex;
+}
+
+@keyframes slide-in {
+  from {
+      right: -100%;
+      opacity: 0;
+  }
+  to {
+      right: 0;
+      opacity: 1;
+  }
+}
+
+.A-body {
+  padding: 0px 200px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.A-title {
+  background-color: black;
+  padding: 0px 20px;
+  width: 90vh;
+  font-size: 80px;
+}
+
+.A-title p{
+  margin: 0;
 }

@@ -4,6 +4,8 @@ body {
     align-items: center;
     z-index: 1;
     background-image: url("../asset/story/bg.jpg");
+    background-size: cover;
+    background-repeat: no;
 }
 
 .accordion-container {

@@ -2,31 +2,32 @@
     {
         "page": "N",
         "background": "../asset/bg_story_jp.jpg",
-        "letter": "../asset/home/letter/letter_n.webp"
+        "letter": "../asset/letter/letter_n.webp"
     }, 
     {
         "page": "A",
         "background": "../asset/home/naruto-sad-video.mp4",
-        "letter": "../asset/home/letter/letter_a.webp"
+        "letter": "../asset/letter/letter_a.webp"
     }, 
     {
         "page": "R",
         "background": "../asset/bg_comics_jp.webp",
-        "letter": "../asset/home/letter/letter_r.webp"
+        "letter": "../asset/letter/letter_r.webp"
     }, 
     {
         "page": "U",
         "background": "../asset/home/anime/background.jpg",
-        "letter": "../asset/home/letter/letter_u.webp"
+        "letter": "../asset/letter/letter_u.webp"
     }, 
     {
         "page": "T",
         "background": "../asset/home/manga/background.jpg",
-        "letter": "../asset/home/letter/letter_t.webp"
+        "letter": "../asset/letter/letter_t.webp"
     }, 
+    
     {
         "page": "O",
         "background": "../asset/bg_others.webp",
-        "letter": "../asset/home/letter/letter_o.webp"
+        "letter": "../asset/letter/letter_o.webp"
     }
 ]

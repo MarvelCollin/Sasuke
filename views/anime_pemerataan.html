@@ -35,7 +35,7 @@
         }
 
         .card img:hover {
-            border: 2px solid red;
+            box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.5);
             transition: 1s;
             filter: grayscale(0%);
         }
@@ -109,66 +109,66 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
             <img id="modalImage" src="" alt="Modal Image">
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // dapatin class row1 
+
+            // ambil semua row 1
             var cardsRow1 = document.querySelectorAll('.row-1 .card');
             
-            // check loop cardRow1
+
+            // cards row 1 -> array
             cardsRow1.forEach(function(card) {
-                // check card apakah di click
+
+                // check 1 1, yang mana yang diclick
                 card.addEventListener('click', function() {
                     
-                    // reset semua class jadi unactive (remove active)
+                    //udah ketemu
+
+                    // reset semua classnya (hilangin active)
                     cardsRow1.forEach(function(card) {
                         card.classList.remove('active');
                     });
                     
-                    // active card yang ditekan
+                    // class tadi yang diclick, tambah active
                     card.classList.add('active');
                 });
             });
+
             
-            // dapatin class row 2
+            // ambil semua row 2
             var cardsRow2 = document.querySelectorAll('.row-2 .card');
-            // dapatin modal
+            
+            // ambil modal
             var modal = document.getElementById("myModal");
-            // dapatin image
+            
+            // ambil image
             var modalImage = document.getElementById("modalImage");
 
-            // optional
-            var span = document.getElementsByClassName("close")[0];
-            
-            // forloop tiap card
+            // loop semuanya cari yang mana diclick
             cardsRow2.forEach(function(card) {
-                // check tiap card
+                // udah ketemu yang diclick
                 card.addEventListener('click', function() {
-                    // ganti source image
+                    // dapatain sourcenya
                     var imgSrc = card.querySelector('img').src;
+                    // ganti sourcenya ke modal
                     modalImage.src = imgSrc;
 
-                    // bikin bisa dilihat
+                    // tunjukin
                     modal.style.display = "block";
                 });
             });
 
-            // jika click bagian x makan bakalan tutup
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            
-            // jika click diluar window maka akan tutup
+            // dapatin output yang kita tekan
             window.onclick = function(event) {
                 console.log(event.target)
-
-                // event.target adalah target yang kita click
-                // modal adalah bagian luar dari content modal
-                if (event.target == modal) {
+                
+                // kalau yang kita click itu adalah diluar content modal
+                if (event.target == modal) {    
+                    // tutup modalnya
                     modal.style.display = "none";
                 }
             }

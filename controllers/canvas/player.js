@@ -49,7 +49,7 @@ let characterWidth = 90;
 let characterHeight = 120;
 
 function updatePlayerPosition() {
-  playerY = canvas.height - characterHeight - 76; 
+  playerY = canvas.height - characterHeight; 
   initialY = playerY;
 }
 
@@ -76,7 +76,7 @@ document.addEventListener("keyup", (event) => {
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = 300;
   updatePlayerPosition();
 });
 
@@ -150,7 +150,7 @@ function drawFrame(frameIndex) {
   spriteImage.src = currentAnimationFrames[frameIndex];
 
   spriteImage.onload = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, 300);
     if (isPlayerFacingLeft) {
       ctx.save();
       ctx.scale(-1, 1);
@@ -186,7 +186,7 @@ function animate() {
 
 function initializeCanvas() {
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = 300;
   updatePlayerPosition();
 }
 
