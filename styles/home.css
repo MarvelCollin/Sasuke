@@ -103,7 +103,7 @@ section {
 }
 
 .dummy-section {
-  height: 100vh;  
+  height: 100vh;
   background-color: transparent !important;
 }
 
@@ -180,7 +180,7 @@ section {
 
 .N-button:hover {
   background-color: white;
-  
+
   a {
     color: black !important;
   }
@@ -199,12 +199,12 @@ a {
 }
 
 .lettering img {
-  width: 300px; 
+  width: 300px;
   height: auto;
   display: block;
-  margin: 10px auto; 
+  margin: 10px auto;
   position: relative;
-  animation: slide-in 1s forwards; 
+  animation: slide-in 1s forwards;
 }
 
 .N-body {
@@ -221,12 +221,12 @@ a {
 
 @keyframes slide-in {
   from {
-      right: -100%;
-      opacity: 0;
+    right: -100%;
+    opacity: 0;
   }
   to {
-      right: 0;
-      opacity: 1;
+    right: 0;
+    opacity: 1;
   }
 }
 
@@ -245,6 +245,172 @@ a {
   font-size: 80px;
 }
 
-.A-title p{
+.A-title p {
   margin: 0;
+}
+
+.R {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.R-card-container {
+  display: flex;
+  padding-left: 200px;
+}
+
+.R-body {
+  display: flex;
+}
+
+.R-card {
+  border: 1px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+.R-card img {
+  width: 90%;
+  height: 400px;
+  object-fit: fit;
+  background-color: white;
+}
+
+.R-card-header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.R-card-description {
+  padding: 10px;
+}
+
+.R-card-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  border: 2px solid white;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.R-card-button:hover {
+  background-color: #444;
+}
+
+.R-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.U-card-container {
+  display: flex;
+}
+
+.U-card {
+  padding: 20px;
+  background-color: black;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.U-card-container {
+  gap: 100px;
+}
+
+.U-card img {
+  width: 100%;
+}
+
+.U-card-button {
+  width: 100%;
+  font-size: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid white;
+  text-align: center;
+}
+
+.T-card {
+  background-image: url("../asset/home/manga/manga.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40vw;
+  height: 60vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+
+.T-button {
+  padding: 20px;
+  border: 4px solid white;
+  margin: 20px;
+}
+.book {
+  perspective: 1000px;
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-origin: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.page.left {
+  left: 0;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+}
+
+.page.right {
+  right: 0;
+  transform: rotateY(180deg);
+}
+
+.pages.flipped .page.left {
+  transform: rotateY(-180deg);
+}
+
+.pages.flipped .page.right {
+  transform: rotateY(0);
 }
