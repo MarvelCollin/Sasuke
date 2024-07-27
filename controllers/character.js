@@ -20,7 +20,7 @@ function fetchJSONData(url) {
 
 function renderCharacterCards(cardData) {
     const container = document.getElementById('character-container');
-    container.innerHTML = ''; // Clear existing cards
+    container.innerHTML = '';   
     cardData.forEach(character => {
         const cardHTML = `
             <div class="card" data-name="${character.name.toLowerCase()}">

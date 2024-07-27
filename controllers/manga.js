@@ -17,7 +17,7 @@ const mangas = [
     filename: "../asset/manga/boruto.jpg",
     title: "BORUTO",
     author: "MASHASHI KISHIMOTO",
-    rating: "0",
+    rating: "-100",
     background: "../asset/manga/boruto-bg.avif",
   },
 ];
@@ -33,7 +33,7 @@ function createTemplate() {
       <p class="rating-p">RATING : <span id="rating"></span> / 5</p>
       <button class="btn">SEE MORE</button>
     </div>
-  `;
+`;
 
   container.innerHTML += detailHTML;
 
@@ -78,6 +78,7 @@ function switchCard(value) {
       });
       currentIndex++;
 
+      $("#title").text(element.title);
       $("#author").text(element.author);
       $("#rating").text(element.rating);
     }

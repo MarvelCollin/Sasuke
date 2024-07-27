@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snap Scroll Example</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+    section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+    .bg-blue { background-color: #3b82f6; }
+    .bg-green { background-color: #10b981; }
+    .bg-red { background-color: #ef4444; }
+    .bg-purple { background-color: #8b5cf6; }
+  </style>
+</head>
+<body>
+  <section class="bg-blue">
+    Section 1
+  </section>
+  <section class="bg-green">
+    Section 2
+  </section>
+  <section class="bg-red">
+    Section 3
+  </section>
+  <section class="bg-purple">
+    Section 4
+  </section>
+</body>
+</html>

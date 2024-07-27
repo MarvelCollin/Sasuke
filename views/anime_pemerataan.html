@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cards</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .card {
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            width: 150px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            filter: grayscale(100%);
+        }
+
+        .card.active {
+            transform: translateY(100px);
+        }
+
+        .card img:hover {
+            border: 2px solid red;
+            transition: 1s;
+            filter: grayscale(0%);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row row-1">
+            <div class="card" id="card1">
+                <img src="../asset/anime/boruto.jpg" alt="Boruto">
+            </div>
+            <div class="card" id="card2">
+                <img src="../asset/anime/naruto.jpg" alt="Naruto">
+            </div>
+            <div class="card" id="card3">
+                <img src="../asset/anime/naruto-shippuden.jpg" alt="Naruto Shippuden">
+            </div>
+        </div>
+        <div class="row row-2">
+            <div class="card" id="modalCard1">
+                <img src="../asset/anime/boruto.jpg" alt="Boruto">
+            </div>
+            <div class="card" id="modalCard2">
+                <img src="../asset/anime/naruto.jpg" alt="Naruto">
+            </div>
+            <div class="card" id="modalCard3">
+                <img src="../asset/anime/naruto-shippuden.jpg" alt="Naruto Shippuden">
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // dapatin class row1 
+            var cardsRow1 = document.querySelectorAll('.row-1 .card');
+            
+            // check loop cardRow1
+            cardsRow1.forEach(function(card) {
+                // check card apakah di click
+                card.addEventListener('click', function() {
+                    
+                    // reset semua class jadi unactive (remove active)
+                    cardsRow1.forEach(function(card) {
+                        card.classList.remove('active');
+                    });
+                    
+                    // active card yang ditekan
+                    card.classList.add('active');
+                });
+            });
+            
+            // dapatin class row 2
+            var cardsRow2 = document.querySelectorAll('.row-2 .card');
+            // dapatin modal
+            var modal = document.getElementById("myModal");
+            // dapatin image
+            var modalImage = document.getElementById("modalImage");
+
+            // optional
+            var span = document.getElementsByClassName("close")[0];
+            
+            // forloop tiap card
+            cardsRow2.forEach(function(card) {
+                // check tiap card
+                card.addEventListener('click', function() {
+                    // ganti source image
+                    var imgSrc = card.querySelector('img').src;
+                    modalImage.src = imgSrc;
+
+                    // bikin bisa dilihat
+                    modal.style.display = "block";
+                });
+            });
+
+            // jika click bagian x makan bakalan tutup
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // jika click diluar window maka akan tutup
+            window.onclick = function(event) {
+                console.log(event.target)
+
+                // event.target adalah target yang kita click
+                // modal adalah bagian luar dari content modal
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

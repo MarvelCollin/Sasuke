@@ -2,7 +2,7 @@ import { ctx, canvas } from "./ctx.js";
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
-  canvas.height = 300;
+  canvas.height = 400;
 }
 
 window.addEventListener("resize", resizeCanvas);

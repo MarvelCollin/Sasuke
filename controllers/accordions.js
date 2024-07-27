@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => renderAccordion(data))
     .catch((error) => console.error("Error fetching data:", error));
-
-  console.log("asodkas");
 });
 
 function renderAccordion(data) {
@@ -14,22 +12,23 @@ function renderAccordion(data) {
     const isCollapsed = index === 0 ? "" : " collapsed";
 
     const itemHTML = `
-          <div class="accordion-item">
-                <div class="accordion-header" id="heading${index}" data-target="#collapse${index}" >
-                    <h2>
-                        <button class="accordion-button${isCollapsed}" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapse${index}">
-                            <img src="../asset/uzumaki.png" alt="Logo" class="accordion-logo">
-                            ${item.title}
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapse${index}" class="accordion-collapse collapse${isActive}" aria-labelledby="heading${index}">
-                    <div class="accordion-body">
-                        <p>${item.description}</p>
-                    </div>
-                </div>
-            </div>
-        `;
+      <div class="accordion-item">
+        <div class="background-blur" style="background-image: url('${item.background}');"></div>
+        <div class="accordion-header" id="heading${index}" data-target="#collapse${index}" >
+          <h2>
+            <button class="accordion-button${isCollapsed}" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapse${index}">
+              <img src="../asset/uzumaki.png" alt="Logo" class="accordion-logo">
+              ${item.title}
+            </button>
+          </h2>
+        </div>
+        <div id="collapse${index}" class="accordion-collapse collapse${isActive}" aria-labelledby="heading${index}">
+          <div class="accordion-body">
+            <p>${item.description}</p>
+          </div>
+        </div>
+      </div>
+    `;
     accordion.insertAdjacentHTML("beforeend", itemHTML);
   });
 

@@ -1,6 +1,21 @@
 body {
     transition: background-image 0.5s ease-in-out;
     background-image: url("../asset/manga/naruto-bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    src: url('../asset/ninja_naruto/njnaruto.ttf') format('truetype');
+    font-family: 'njnaruto';
+}
+
+#title {
+    font-family: 'njnaruto', sans-serif;
+    color: orange;
+    font-size: 50px;
+    text-shadow: 4px 2px 0 #000;
 }
 
 .container {
@@ -15,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 60%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -39,8 +54,11 @@ body {
 }
 
 .detail {
+    color: white;
+    font-size: 40px;
     height: 100%;
     width: 40%;
+    text-shadow: 4px 2px 0 #000;
 }
 
 .detail h1, .detail p, .detail button {
@@ -56,9 +74,10 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 20px 40px;
     background-color: black;
     color: white;
+    font-size: 20px;
     border: none;
     cursor: pointer;
 }
